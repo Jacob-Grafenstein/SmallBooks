@@ -9,7 +9,7 @@ import {
   NavLink,
   Container
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class AppNavbar extends Component {
   state = {
@@ -24,8 +24,9 @@ class AppNavbar extends Component {
 
   render() {
     return (
+      
       <div>
-        <FontAwesomeIcon icon="faCoffee"/>
+        
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
             <NavbarBrand href="/">SmallBooks</NavbarBrand>
@@ -34,7 +35,7 @@ class AppNavbar extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <NavLink href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">
-                    Browse Stories
+                     Browse Stories
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -44,7 +45,7 @@ class AppNavbar extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">
-                    Account Settings
+                  <FontAwesomeIcon icon="cog" /> Account Settings
                   </NavLink>
                 </NavItem>
               </Nav>
