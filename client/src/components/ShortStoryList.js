@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import ShortStory from './ShortStory';
 import {
   Container,
-  Button
+  Button,
+  ListGroup,
+  ListGroupItem
 } from 'reactstrap';
 import {
   CSSTransition,
@@ -11,6 +14,7 @@ import uuid from 'uuid';
 
 class ShortStoryList extends Component {
   state = {
+    storyId:0,
     shortStories: [
       {
         id: uuid(),
@@ -49,26 +53,69 @@ class ShortStoryList extends Component {
   }
 
   render() {
-    const { shortStories } = this.state;
-    return(
-      <Container>
-        <Button
-          color="success"
-          style={{marginBottom: '2rem'}}
-          onClick={() => {
-            const name = prompt('Enter Story Name');
-            if (name) {
-              this.setState(state => ({
-                shortStories:[...state.shortStories, {
-                  id:uuid(),
-                  name
-                }]
-              }));
-            }
-          }}
-        >Create New Story</Button>
-      </Container>
-    )
+    const shortStories = this.state.shortStories;
+    const storyID = this.state.storyId;
+    if (storyID !== 0 ) {
+      return(
+        <Container>
+          <Button
+            color="dark"
+            style={{marginBottom: '2rem'}}
+            onClick={()=> {
+              this.setState({
+                storyId: 0
+              })
+            }}
+          >Back</Button>
+          <ShortStory story={shortStories.find((shortStory) => { 
+            return shortStory.id === storyID
+          })}/>
+        </Container>
+      );
+    } else {
+      return(
+        
+        <Container>
+          <Button
+            color="success"
+            style={{marginBottom: '2rem'}}
+            onClick={() => {
+              const name = prompt('Enter Story Name');
+              if (name) {
+                this.setState(state => ({
+                  shortStories:[...state.shortStories, {
+                    id:uuid(),
+                    name
+                  }]
+                }));
+              }
+            }}
+          >Create New Story</Button>
+          <ListGroup>
+            <TransitionGroup className="short-story-list">
+              {shortStories.map(({id, name}) => (
+                <CSSTransition key={id} timeout={500} classNames="fade">
+                  <ListGroupItem>
+                    {name}
+                    <Button 
+                      color="dark"
+                      size="sm"
+                      className="pull-right"
+                      onClick={() => {
+                        this.setState({
+                          storyId:id
+                        })
+                      }}>
+                      Read Story
+                    </Button>
+                  </ListGroupItem>
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
+          </ListGroup>
+        </Container>
+      )
+    }
   }
 }
 
