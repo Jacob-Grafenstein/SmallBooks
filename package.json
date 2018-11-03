@@ -1,0 +1,20 @@
+{
+  "name": "smallbooks",
+  "version": "1.0.0",
+  "description": "An application for finding and sharing short stories.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Jake Grafenstein",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
