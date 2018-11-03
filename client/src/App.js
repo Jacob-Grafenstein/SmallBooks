@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppNavBar from './components/AppNavbar';
+import ShortStoryList from './components/ShortStoryList';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -32,6 +33,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <AppNavBar />
+          <ShortStoryList />
         </header>
       </div>
     );
