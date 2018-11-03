@@ -4,8 +4,12 @@
   "description": "An application for finding and sharing short stories.",
   "main": "server.js",
   "scripts": {
+    "client-install":"npm install --prefix client && npm i bootstrap reactstrap uuid react-transition-group --prefix client",
+    "server-install":"npm i express mongoose concurrently nodemon",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Jake Grafenstein",
   "license": "MIT",

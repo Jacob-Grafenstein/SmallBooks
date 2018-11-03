@@ -11,7 +11,7 @@ app.use(express.json());
 
 // connect to Mongo
 mongoose
-  .connect(db)
+  .connect(db, {useNewUrlParser: true})
   .then(() => {
     console.log('MongoDB Connected')
   })
