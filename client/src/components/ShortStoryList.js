@@ -59,7 +59,7 @@ class ShortStoryList extends Component {
             const name = prompt('Enter Story Name');
             if (name) {
               this.setState(state => ({
-                items:[...state.items, {
+                shortStories:[...state.shortStories, {
                   id:uuid(),
                   name
                 }]
