@@ -33,6 +33,10 @@ const ShortStorySchema = new Schema({
     type: String,
     required: true
   },
+  isPublic: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = ShortStory = mongoose.model('short-story', ShortStorySchema);

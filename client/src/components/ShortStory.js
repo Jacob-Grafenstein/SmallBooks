@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {
-  Container,
-  Button
+  Container
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 class ShortStory extends Component {
   constructor(props) {
@@ -25,6 +25,10 @@ class ShortStory extends Component {
       </Container>
     );
   }
+}
+
+ShortStory.propTypes = {
+  story: PropTypes.object.isRequired
 }
 
 export default ShortStory;

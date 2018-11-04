@@ -4,7 +4,7 @@
   "description": "An application for finding and sharing short stories.",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix client && npm i bootstrap reactstrap uuid react-transition-group --prefix client && npm i --save @fortawesome/fontawesome-svg-core --prefix client && npm i --save @fortawesome/free-solid-svg-icons --prefix client && npm i --save @fortawesome/react-fontawesome -- prefix client && npm i --save @fortawesome/free-brands-svg-icons@prerelease --prefix client",
+    "client-install":"npm install --prefix client && npm i bootstrap reactstrap uuid react-transition-group redux redux-react redux-thunk axios --prefix client && npm i --save @fortawesome/fontawesome-svg-core --prefix client && npm i --save @fortawesome/free-solid-svg-icons --prefix client && npm i --save @fortawesome/react-fontawesome -- prefix client && npm i --save @fortawesome/free-brands-svg-icons@prerelease --prefix client",
     "server-install":"npm i express mongoose concurrently nodemon",
     "start": "node server.js",
     "server": "nodemon server.js",
