@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import AppNavBar from './components/AppNavbar';
 import ShortStoryList from './components/ShortStoryList';
+import ShortStoryModal from './components/shortStoryModal';
+import { Container } from 'reactstrap';
+
+/* Import for our store and redux */
+import { Provider } from 'react-redux';
+import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -14,7 +20,9 @@ import {
   faQuoteLeft,
   faSquare,
   faCheckSquare
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
+
+
 
 library.add(
   fab,
@@ -30,12 +38,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <AppNavBar />
-          <ShortStoryList />
-        </header>
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <AppNavBar />
+          </header>
+          <Container>
+            <ShortStoryModal />
+            <ShortStoryList />
+          </Container>
+          
+        </div>
+      </Provider>
     );
   }
 }

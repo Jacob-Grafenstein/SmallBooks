@@ -2,20 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create Schema
-const ShortStorySchema = new Schema({
-  name: {
+const UserSchema = new Schema({
+  username: {
     type: String,
     required: true
   },
-  description: {
+  password: {
     type: String
   },
-  story: {
+  email: {
+    //Should we require an email?
     type: String
-  },
-  author: {
-    type: String,
-    required: true
   },
   createdDate: {
     type: Date,
@@ -32,11 +29,7 @@ const ShortStorySchema = new Schema({
   updatedBy: {
     type: String,
     required: true
-  },
-  isPublic: {
-    type: Boolean,
-    default: false
   }
 });
 
-module.exports = ShortStory = mongoose.model('short-story', ShortStorySchema);
+module.exports = User = mongoose.model('user', UserSchema);
