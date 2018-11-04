@@ -11,7 +11,7 @@ const AuthorSchema = new Schema({
     type: String
   },
   authorImage: {
-    //Should we require an email?
+    //how will this be implemented?
     type: String
   },
   createdDate: {
