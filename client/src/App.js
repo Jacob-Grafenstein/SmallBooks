@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import AppNavBar from './components/AppNavbar';
 import ShortStoryList from './components/ShortStoryList';
 import ShortStoryModal from './components/shortStoryModal';
-import { Container } from 'reactstrap';
+import AuthorProfile from './components/AuthorProfile';
+import CreateAuthorProfile from './components/CreateAuthorProfile';
+import AuthorProfileList from './components/AuthorProfileList';
+import { 
+  Container
+ } from 'reactstrap';
 
 /* Import for our store and redux */
 import { Provider } from 'react-redux';
@@ -35,7 +40,6 @@ library.add(
 )
 
 class App extends Component {
-
   render() {
     return (
       <Provider store={store}>
@@ -43,10 +47,16 @@ class App extends Component {
           <header className="App-header">
             <AppNavBar />
           </header>
+
           <Container>
-            <ShortStoryModal />
-            <ShortStoryList />
+              <CreateAuthorProfile />
+              <AuthorProfileList />
           </Container>
+
+          <Container> 
+            <ShortStoryModal /> 
+            <ShortStoryList /> 
+          </Container> 
           
         </div>
       </Provider>
