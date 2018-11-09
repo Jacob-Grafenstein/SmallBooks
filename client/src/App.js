@@ -5,7 +5,7 @@ import ShortStoryModal from './components/shortStoryModal';
 import AuthorProfile from './components/AuthorProfile';
 import CreateAuthorProfile from './components/CreateAuthorProfile';
 import AuthorProfileList from './components/AuthorProfileList';
-import { 
+import {
   Container
  } from 'reactstrap';
 
@@ -49,15 +49,15 @@ class App extends Component {
           </header>
 
           <Container>
-              <CreateAuthorProfile />
-              <AuthorProfileList />
+            <CreateAuthorProfile />
+            <AuthorProfileList />
           </Container>
 
-          <Container> 
-            <ShortStoryModal /> 
-            <ShortStoryList /> 
-          </Container> 
-          
+          <Container>
+            <ShortStoryModal />
+            <ShortStoryList />
+          </Container>
+
         </div>
       </Provider>
     );

@@ -10,7 +10,7 @@ import {
   Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addAuthor } from '../actions/authorActions'; 
+import { addAuthor } from '../actions/authorActions';
 
 class CreateAuthorProfile extends Component {
   state = {
@@ -32,6 +32,7 @@ class CreateAuthorProfile extends Component {
   }
 
   onChange = e => {
+    e.preventDefault();
     let author = this.state.author;
     author[e.target.name] = e.target.value;
     this.setState({
@@ -81,13 +82,13 @@ class CreateAuthorProfile extends Component {
                 <Label for="authorBiography">Author Biography</Label>
                 <Input type="textarea" name="authorBiography" id="author biography" onChange={this.onChange} />
               </FormGroup>
-              <Button 
+              <Button
                 color="primary"
-                className="pull-right" 
+                className="pull-right"
                 onClick={this.onSubmit}
                 block
               >
-                Save Author  
+                Save Author
               </Button>
             </Form>
           </ModalBody>
