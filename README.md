@@ -1,11 +1,5 @@
 # smallBooksMERN
 
-## Database Information
-
-* DB: https://mlab.com/
-* Username: biggestBoulder
-* Password: B01zRBack
-
 ## Installation Instructions
 - Clone Git Repository
 - Install node and npm (NOTE: NEVER USE SUDO)
